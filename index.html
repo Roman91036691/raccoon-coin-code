@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>RACCOON COIN</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raccoon Coin</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>RACCOON COIN</h1>
-        <div id="score">Очки: 0</div>
-        <div id="time-left">Час залишився: 5:00</div>
-        <img id="coin" src="coin.png" alt="Coin" onclick="increaseScore()">
-    </div>    
+  <nav>
+    <button onclick="showGame()">Гра</button>
+    <button onclick="showShop()">Магазин</button>
+  </nav>
 
-    <script src="script.js"></script>
+  <!-- Контейнер гри -->
+  <div class="game-container" id="game">
+    <h1>RACCOON COIN</h1>
+    <div id="score">Очки: 0</div>
+    <div id="energy">Енергія: 3000 / 3000 🔋</div>
+    <div class="coin" onclick="increaseScore()">
+      <img src="coin.png" alt="Coin">
+    </div>
+    <div id="message" class="message"></div> <!-- Додано елемент для повідомлень у грі -->
+  </div>
+
+  <!-- Контейнер магазину -->
+  <div class="shop-container" id="shop" style="display: none;">
+    <h1>Магазин</h1>
+    <div id="points">Ваші очки: 0</div>
+    <div class="item" onclick="buyClickPower()">Сила кліку - 930 очок</div>
+    <div id="message-shop" class="message"></div> <!-- Додано елемент для повідомлень в магазині -->
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
